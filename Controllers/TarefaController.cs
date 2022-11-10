@@ -61,6 +61,7 @@ namespace TrilhaApiDesafio.Controllers
             if (tarefa.Data == DateTime.MinValue)
                 return BadRequest(new { Erro = "A data da tarefa não pode ser vazia" });
 
+            // Feito: Adicionar a tarefa recebida no EF e salvar as mudanças (save changes)
             _context.Add(tarefa);
             _context.SaveChanges();
             return CreatedAtAction(nameof(ObterPorId), new { id = tarefa.Id }, tarefa);
