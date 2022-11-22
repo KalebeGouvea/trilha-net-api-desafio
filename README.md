@@ -58,7 +58,7 @@ Caso contrário, a conexão precisa ser alterada no arquivo appsettings.Developm
 
 No terminal, clone o projeto:
 ```
-git clone https://github.com/KalebeGouvea/tarefas-app.git
+git clone https://github.com/KalebeGouvea/tarefas-api.git
 ```
 Acesse a pasta do projeto, rode o seguinte comando e o projeto deve ser aberto no navegador em seguida:
 ```
