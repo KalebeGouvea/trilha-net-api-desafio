@@ -1,34 +1,10 @@
-# DIO - Trilha .NET - API e Entity Framework
-www.dio.me
+# API - Gerenciador de tarefas
+### Descrição do projeto
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de API e Entity Framework, da trilha .NET da DIO.
+O projeto é um fork de um desafio do módulo de API e Entity Framework da [DIO][DIO] onde foram usados os conhecimentos adquiridos no curso para dar continuidade ao código disponibilizado pela metade.
+A Web API consiste de um sistema gerenciador de tarefas utilizando CRUD, onde é possível cadastrar uma lista de tarefas que permitirá organizar melhor uma rotina.
 
-## Contexto
-Você precisa construir um sistema gerenciador de tarefas, onde você poderá cadastrar uma lista de tarefas que permitirá organizar melhor a sua rotina.
-
-Essa lista de tarefas precisa ter um CRUD, ou seja, deverá permitir a você obter os registros, criar, salvar e deletar esses registros.
-
-A sua aplicação deverá ser do tipo Web API ou MVC, fique a vontade para implementar a solução que achar mais adequado.
-
-A sua classe principal, a classe de tarefa, deve ser a seguinte:
-
-![Diagrama da classe Tarefa](diagrama.png)
-
-Não se esqueça de gerar a sua migration para atualização no banco de dados.
-
-## Métodos esperados
-É esperado que você crie o seus métodos conforme a seguir:
-
-
-**Swagger**
-
-
-![Métodos Swagger](swagger.png)
-
-
-**Endpoints**
-
+### Endpoints:
 
 | Verbo  | Endpoint                | Parâmetro | Body          |
 |--------|-------------------------|-----------|---------------|
@@ -41,6 +17,7 @@ Não se esqueça de gerar a sua migration para atualização no banco de dados.
 | GET    | /Tarefa/ObterPorStatus  | status    | N/A           |
 | POST   | /Tarefa                 | N/A       | Schema Tarefa |
 
+### Schema:
 Esse é o schema (model) de Tarefa, utilizado para passar para os métodos que exigirem
 
 ```json
@@ -53,6 +30,39 @@ Esse é o schema (model) de Tarefa, utilizado para passar para os métodos que e
 }
 ```
 
+### Swagger:
+A documentação da API (Swagger) também pode ser acessada no seguinte endereço, utilizando a porta definida:
+https://localhost:PORT/swagger
 
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+![Métodos Swagger](swagger.png)
+
+### Requisitos para rodar:
+- .NET 6.0
+- Entity Framework Core
+- SQL Server 2019
+
+### Como rodar:
+Instale o .NET 6.0 SDK diretamente da página da Microsoft:
+```
+https://dotnet.microsoft.com/en-us/download/dotnet/6.0
+```
+Instale o Entity Framework Core pelo CLI do .NET no terminal:
+```
+dotnet tool install --global dotnet-ef
+```
+Com o SQL Server 2019 instalado e rodando, a Autenticação do Windows precisa estar habilitada e o nome do servidor precisa estar definido conforme abaixo:
+```
+localhost\sqlexpress
+```
+Caso contrário, a conexão precisa ser alterada no arquivo appsettings.Development.json
+
+No terminal, clone o projeto:
+```
+git clone https://github.com/KalebeGouvea/tarefas-app.git
+```
+Acesse a pasta do projeto, rode o seguinte comando e o projeto deve ser aberto no navegador em seguida:
+```
+dotnet watch run
+```
+
+[DIO]: http://www.dio.me "DIO"
